@@ -70,4 +70,21 @@ router.put('/add-selling-category', fetchuser, async (req, res) => {
     }
   });
 
+// Route to get details of a specific category by its ID
+router.get("/category/:categoryId", async (req, res) => {
+  try {
+    const { categoryId } = req.params;
+    const category = await Category.findById(categoryId);
+
+    if (!category) {
+      return res.status(404).json({ error: "Category not found" });
+    }
+
+    res.json(category);
+  } catch (error) {
+    console.error("Error fetching category details:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 module.exports = router;
