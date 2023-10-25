@@ -6,6 +6,7 @@ import Signup from "./Components/Signup";
 import { Footer } from "./Components/Footer";
 import Home from "./Components/Home";
 import CategoryState from "./context/categories/CategoryState";
+import CategoryPage from "./Components/pages/CategoryPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             {/* Corrected path for Login */}
             <Route path="/signup" element={<Signup />} />{" "}
             {/* Corrected path for Signup */}
+            <Route path="/category/:categoryId" element={<CategoryPage />} />
           </Routes>
          
         </BrowserRouter>
