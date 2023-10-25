@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Mono:wght@300&display=swap");
+@font-face {
+  font-family: val;
+  src: url(f/Valorant\ Font.ttf);
+}
+
+.navbar {
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  padding: 0.8% 2%;
+  text-align: center;
+  box-shadow: black 100px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.btnn {
+  text-decoration: none;
+  background-color: #ce97f5;
+  padding: 6px 20px;
+  color: black;
+  margin: 4%;
+  border: 1px black solid;
+}
+.btnn:hover {
+  background-color: #e7cbfb;
+}
+.brandname {
+  font-family: val;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.menui {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  * {
+    overflow-x: hidden;
+    background-color: white;
+  }
+  .brandname {
+    font-size: 25px;
+  }
+  .menui {
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+  }
+  .menu-link {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: inline-block;
+    margin: 0;
+    margin-top: 5%;
+    padding: 0% 5%;
+    font-size: 20px;
+    text-align: left;
+  }
+  #navbarSupportedContent {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    height: 100vh;
+  }
+  .menu {
+    height: 100vh;
+  }
+
+  .show {
+    display: inline-block;
+  }
+  .brandname-menu {
+    font-family: val;
+    text-align: left;
+    display: inline-block;
+    padding-top: 5%;
+    position: absolute;
+    left: 5%;
+    
+
+  }
+  .closebtn {
+    position: relative;
+    padding: 10px;
+    left: 40%;
+    top: 1%;
+    display: inline-block;
+    
+  }
+}

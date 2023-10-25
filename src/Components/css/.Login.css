@@ -1,0 +1,11 @@
+.Login {
+    height: 80vh;
+    padding: 80px 100px;
+}
+
+@media (max-width: 768px) {
+    .Login {
+        height: 60vh;
+        padding: 70px 30px;
+    }
+}

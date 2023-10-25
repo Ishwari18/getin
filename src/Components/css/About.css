@@ -1,0 +1,77 @@
+.main {
+  height: auto; /* Set your desired height here */
+  padding: 70px 20px; /* Add padding for spacing */
+}
+.abttext {
+  text-align: left;
+  margin: auto;
+  margin-left: 5%;
+  width: 86%;
+}
+
+.abttimer {
+  text-align: left;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 86%;
+  font-weight: 700;
+  font-size: 25px;
+  position: absolute;
+}
+.time {
+  padding: 10px 30px;
+  background-color: white;
+  font-weight: 800;
+}
+.bg {
+  background-color: rgb(218, 171, 244);
+}
+
+.panel {
+  z-index: +10000;
+  background-color: yellow;
+}
+.accordion {
+  position: fixed;
+  display: inline-block;
+  width: 10%;
+}
+
+@media (max-width: 768px) {
+  .abttext {
+    text-align: left;
+    margin: auto;
+    margin-left: 2%;
+    width: 95%;
+    overflow-y: hidden;
+    font-size: 14px;
+    height: 110vh;
+  }
+  .abttext h5 {
+    overflow-y: hidden;
+  }
+  .abttimer {
+    text-align: left;
+    margin: auto;
+    margin-left: 5%;
+    width: 86%;
+    font-weight: 700;
+    font-size: 25px;
+    height: auto;
+    display: none;
+  }
+  .course-content {
+    width: 100%; /* Take full width on mobile */
+    margin-left: 0; /* No margin on the left */
+    margin-top: 4%; /* Adjust margin for spacing */
+  }
+
+  .course-content h2 {
+    margin: 1em 0;
+    font-size: 24px; /* Reduce font size */
+  }
+  .content-list {
+    list-style-type: disc;
+  }
+}

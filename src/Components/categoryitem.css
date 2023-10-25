@@ -1,0 +1,12 @@
+.category-item {
+    flex: 0 0 25%; /* Adjust the width as needed (25% for four items in a row) */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: inline-block;
+  }
+  
+  /* Adjust width and other styles as needed */
+  

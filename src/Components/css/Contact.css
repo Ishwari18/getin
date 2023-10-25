@@ -1,0 +1,36 @@
+
+.Contact {
+    height: 60vh;
+    padding: 30px 100px;
+}
+.contact h2 {
+  margin-left: 40px;
+  padding-top: 30px;
+}
+.contact-form {
+  padding: 40px;
+}
+.contact-submitbtn {
+  text-decoration: none;
+  background-color: #ce97f5;
+  padding: 10px 20px;
+  color: black;
+}
+.contact-submitbtn:hover {
+  background-color: #e7cbfb;
+}
+.custom-input {
+    height: 10vh; /* Adjust the width as desired */
+  }
+ 
+  
+  @media (max-width: 768px) {
+    .Contact {
+      height: auto;
+      padding: 30px 30px;
+  }
+  }
+  
+  
+  
+  

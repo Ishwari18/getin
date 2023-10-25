@@ -1,0 +1,23 @@
+.alert {
+    background-color: rgb(249, 243, 128);
+    height: 4%;
+    margin: 0;
+    padding: 0.4%;
+    text-align: center;
+    font-weight: 800;
+}
+
+.discount{
+    background-color: #ce97f5;;
+    font-size: 20px;
+    font-weight: 800;
+}
+@media (max-width: 768px) {
+    .alert{
+        font-size: 12px;
+        padding: 10px;
+    }
+    .discount {
+        font-size: 14px;
+    }
+}

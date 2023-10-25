@@ -1,0 +1,56 @@
+.Footer {
+
+  padding: 20px;
+  position: absolute;
+  width: 100%; /* Set the width to 100% to stretch across the screen */
+  bottom: 0; /* Stick to the bottom of the viewport */
+  background-color: #e8cdfa;
+}
+.footer-content {
+  height: 24vh;
+  
+}
+
+.Footer-links {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+}
+.brandname {
+  text-decoration: none;
+  color: black;
+}
+.footer-menu {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  margin: 0;
+}
+.footer-menu:hover {
+  text-decoration: underline;
+}
+
+.lastline-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .Footer {
+    overflow-y: hidden;
+    height: auto;
+  }
+  .Footer-links {
+    height: auto;
+    margin: 0;
+  }
+  .footer-content {
+    height: auto;
+  }
+  .lastline-links {
+    display: inline-block;
+  }
+  .footer-brandname {
+    font-size: 1em;
+  }
+}

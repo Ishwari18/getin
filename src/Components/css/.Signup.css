@@ -1,0 +1,12 @@
+.Signup {
+    height: 80vh;
+    padding: 80px 100px;
+}
+@media (max-width: 768px) {
+    .Signup {
+        height: auto;
+        padding: 40px 30px;
+        background-color: white;
+    }
+    
+}
