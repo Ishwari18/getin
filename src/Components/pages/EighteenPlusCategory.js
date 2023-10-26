@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const EighteenPlusCategory = ({ category }) => {
   const [users, setUsers] = useState([]);
@@ -8,7 +9,9 @@ const EighteenPlusCategory = ({ category }) => {
     const categoryId = category._id; // Replace with your actual category ID
     const fetchUsersInCategory = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/categories/${categoryId}`);
+        const response = await fetch(
+          `http://localhost:5000/api/categories/${categoryId}`
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -36,7 +39,9 @@ const EighteenPlusCategory = ({ category }) => {
           <h3>Users Selling Services in this 18+ Category:</h3>
           <ul>
             {users.map((user) => (
-              <li key={user._id}>{user.name}</li>
+              <Link to={`/category/${category._id}/user/${user._id}`} key={user._id}>
+                <li key={user._id}>{user.name}</li>
+              </Link>
             ))}
           </ul>
         </>

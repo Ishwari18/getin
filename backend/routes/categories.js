@@ -87,4 +87,33 @@ router.get("/category/:categoryId", async (req, res) => {
   }
 });
 
+
+// Route to fetch information about a user selling services in a specific category
+router.get("/category/:categoryId/user/:userId", async (req, res) => {
+  try {
+    const { categoryId, userId } = req.params;
+
+    // Find the user by their ID
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check if the user is selling services in the specified category
+    if (user.sellingCategory.toString() === categoryId) {
+      res.json(user);
+    } else {
+      res.status(404).json({ error: 'User does not sell services in this category' });
+    }
+  } catch (error) {
+    console.error('Error fetching user details:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+
+
+
 module.exports = router;

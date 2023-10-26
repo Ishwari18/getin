@@ -7,6 +7,8 @@ import { Footer } from "./Components/Footer";
 import Home from "./Components/Home";
 import CategoryState from "./context/categories/CategoryState";
 import CategoryPage from "./Components/pages/CategoryPage";
+import EighteenPlusCategory from "./Components/pages/EighteenPlusCategory"
+import EighteenPlusUser from "./Components/pages/EighteenPlusUser";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />{" "}
             {/* Corrected path for Signup */}
             <Route path="/category/:categoryId" element={<CategoryPage />} />
+            <Route path="/category/18plus/:categoryId" element={<EighteenPlusCategory />} />
+            <Route path="/category/:categoryId/user/:userId" element={<EighteenPlusUser />} />
           </Routes>
          
         </BrowserRouter>
