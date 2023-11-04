@@ -9,6 +9,8 @@ import CategoryState from "./context/categories/CategoryState";
 import CategoryPage from "./Components/pages/CategoryPage";
 import EighteenPlusCategory from "./Components/pages/EighteenPlusCategory"
 import EighteenPlusUser from "./Components/pages/EighteenPlusUser";
+import Profile from "./Components/pages/Profile";
+import { AddServicespage } from "./Components/pages/AddServicespage";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="/category/:categoryId" element={<CategoryPage />} />
             <Route path="/category/18plus/:categoryId" element={<EighteenPlusCategory />} />
             <Route path="/category/:categoryId/user/:userId" element={<EighteenPlusUser />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/sell" element={<AddServicespage />} />
           </Routes>
          
         </BrowserRouter>

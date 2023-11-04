@@ -37,13 +37,25 @@ const EighteenPlusCategory = ({ category }) => {
           {/* Add any 18+ category-specific details here */}
           <div>this is 18+ stuff</div>
           <h3>Users Selling Services in this 18+ Category:</h3>
-          <ul>
-            {users.map((user) => (
-              <Link to={`/category/${category._id}/user/${user._id}`} key={user._id}>
-                <li key={user._id}>{user.name}</li>
-              </Link>
-            ))}
-          </ul>
+          <div className="d-flex align-items-center">
+            <div className="row d-flex">
+              {users.map((user) => (
+                <Link
+                  to={`/category/${category._id}/user/${user._id}`}
+                  key={user._id}
+                >
+                  <div className="card  d-flex category-item">
+                    <div className="card-body ">
+                      <div key={user._id}>
+                        <p>{user.name}</p>
+                        <p>{user.email}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </>
       )}
     </div>

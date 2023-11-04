@@ -4,6 +4,7 @@ const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const fetchuser = require("../middleware/fetchuser");
 
 const JWT_SECRET = 'Harryisagoodb$oy';
 
@@ -93,6 +94,23 @@ router.post('/login', [
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Internal Server Error");
+  }
+});
+
+// Route to fetch the user profile (require authentication)
+router.get("/user-profile", fetchuser, async (req, res) => {
+  try {
+    // Fetch the authenticated user's profile
+    const user = await User.findById(req.user.id).select("-password"); // Exclude the password field
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json(user);
+  } catch (error) {
+    console.error("Error fetching user profile:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
