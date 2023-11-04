@@ -1,8 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
+  const [profilePicture, setProfilePicture] =  useState(null);
+  const [profilePictureUrl, setProfilePictureUrl] = useState(null);
+
+  const handleUpload = (e) => {
+    const formdata = new FormData();
+    formdata.append('profilePicture', profilePicture);
+
+    // Get the auth token from local storage
+    const token = localStorage.getItem("token");
+
+    // Include the auth token in the request headers
+    const config = {
+      headers: {
+        "auth-token": token,
+      },
+    };
+
+    axios
+      .post("http://localhost:5000/api/auth/upload-profile-picture", formdata, config)
+      .then((res) => {
+        console.log(res);
+        // You can optionally update the user's profile with the new picture
+        // or trigger a refresh of the user's data
+        fetchProfilePicture();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const fetchProfilePicture = () => {
+    // Fetch the user's profile picture from the new route
+    axios
+      .get("http://localhost:5000/api/auth/profile-picture", {
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setProfilePictureUrl(res.data.profilePictureUrl);
+      })
+      .catch((err) => {
+        console.log(err);
+        // Handle the error, e.g., display a default image
+      });
+  };
 
   // Fetch user-specific data here using the user's token
   useEffect(() => {
@@ -21,6 +66,8 @@ const Profile = () => {
         })
         .catch((error) => console.error("Error fetching user profile:", error));
     }
+    // Fetch the user's profile picture
+    fetchProfilePicture();
   }, []);
 
   const handleLogOut = () => {
@@ -34,20 +81,29 @@ const Profile = () => {
 
   return (
     <div>
-    <h2>Profile Page</h2>
-    {userData ? (
-      <div>
-        <h3>Welcome, {userData.name}</h3>
-        <p>Email: {userData.email}</p>
-        <p>Phone: {userData.number}</p>
-        {/* Display other user-specific details here */}
-        <button onClick={handleLogOut}>Log Out</button>
-        <Link to="/sell">Sell</Link> {/* Add a Link to the "Sell" page */}
-      </div>
-    ) : (
-      <p>Loading user profile...</p>
-    )}
-  </div>
+      <h2>Profile Page</h2>
+      {userData ? (
+        <div>
+          <h3>Welcome, {userData.name}</h3>
+          <p>Email: {userData.email}</p>
+          <p>Phone: {userData.number}</p>
+          {/* Display other user-specific details here */}
+          <button onClick={handleLogOut}>Log Out</button>
+          <Link to="/sell">Sell</Link>
+
+          {profilePictureUrl ? (
+            <img src={profilePictureUrl} alt="Profile" />
+          ) : (
+            <p>Loading profile picture...</p>
+          )}
+
+          <input type="file" onChange={e => setProfilePicture(e.target.files[0])} />
+          <button onClick={handleUpload}>Upload</button>
+        </div>
+      ) : (
+        <p>Loading user profile...</p>
+      )}
+    </div>
   );
 };
 

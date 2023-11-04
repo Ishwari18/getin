@@ -28,6 +28,9 @@ const UserSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
       },
+    profilePicture: {
+        type: String, // Store the file path or image URL
+    },
   });
 
   module.exports = mongoose.model('user', UserSchema);

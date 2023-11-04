@@ -6,7 +6,23 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 
+const multer = require("multer");
+
+
 const JWT_SECRET = 'Harryisagoodb$oy';
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    // Set the destination folder for uploaded files
+    cb(null, "public/"); // Create an "uploads" folder in your project
+  },
+  filename: function (req, file, cb) {
+    // Set the file name for the uploaded file
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 // ROUTE 1: Create a User using: POST "/api/auth". No login required
 router.post('/', [
@@ -110,6 +126,25 @@ router.get("/user-profile", fetchuser, async (req, res) => {
     res.json(user);
   } catch (error) {
     console.error("Error fetching user profile:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// Route to upload a profile picture
+router.post("/upload-profile-picture", fetchuser, upload.single("profilePicture"), async (req, res) => {
+  try {
+    // Assuming you have a user model with the 'profilePicture' field
+    const userId = req.user.id; // Get the user's ID from authentication (provided by fetchuser middleware)
+    const profilePicturePath = req.file.path; // The path to the uploaded profile picture
+
+    // Update the user's profile picture in the database
+    await User.findByIdAndUpdate(userId, { profilePicture: profilePicturePath });
+
+    res.status(200).json({ message: "Profile picture uploaded successfully" });
+  } catch (error) {
+    console.error(error);
+
+    // Handle the error and send an appropriate error response to the client
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
