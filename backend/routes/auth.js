@@ -149,4 +149,25 @@ router.post("/upload-profile-picture", fetchuser, upload.single("profilePicture"
   }
 });
 
+// router.get("/profile-picture", fetchuser, (req, res) => {
+//   const userId = req.user.id; // Get the user's ID from authentication (you may need to implement this)
+  
+//   // Retrieve the user's profile picture path or URL from the database
+//   User.findById(userId, (err, user) => {
+//     if (err) {
+//       return res.status(500).json({ error: "Internal Server Error" });
+//     }
+    
+//     if (!user) {
+//       return res.status(404).json({ error: "User not found" });
+//     }
+
+//     const profilePicturePath = user.profilePicture;
+
+//     // Serve the user's profile picture as a response
+//     res.status(200).sendFile(profilePicturePath);
+//   });
+// });
+
+
 module.exports = router;

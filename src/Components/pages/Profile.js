@@ -7,12 +7,14 @@ const Profile = () => {
   const [profilePicture, setProfilePicture] =  useState(null);
   const [profilePictureUrl, setProfilePictureUrl] = useState(null);
 
+  const token = localStorage.getItem("token");
+
   const handleUpload = (e) => {
     const formdata = new FormData();
     formdata.append('profilePicture', profilePicture);
 
     // Get the auth token from local storage
-    const token = localStorage.getItem("token");
+   
 
     // Include the auth token in the request headers
     const config = {
@@ -35,13 +37,13 @@ const Profile = () => {
   const fetchProfilePicture = () => {
     // Fetch the user's profile picture from the new route
     axios
-      .get("http://localhost:5000/api/auth/profile-picture", {
+      .get("http://localhost:5000/api/auth/user-profile", {
         headers: {
-          "auth-token": localStorage.getItem("token"),
+          "auth-token": token,
         },
       })
       .then((res) => {
-        setProfilePictureUrl(res.data.profilePictureUrl);
+        setProfilePictureUrl(res.data.profilePicture);
       })
       .catch((err) => {
         console.log(err);

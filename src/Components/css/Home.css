@@ -4,8 +4,36 @@
 }
 * {
   font-family: "Roboto Mono", monospace;
-  background-color: white;
   overflow-x: hidden;
+}
+.main .component h1 {
+  overflow-y: hidden;
+}
+
+.main .component {
+  width: 80%;
+  height: 70vh;
+}
+
+.main {
+  align-self: center;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+}
+.component {
+  margin: auto;
+  align-content: center;
+  margin: 20px;
+  text-align: left;
+  overflow-y: hidden;
+  
+  
+}
+.main img{
+  width: 200px;
+  overflow-y: hidden;
 }
 
 h2 {
@@ -13,299 +41,4 @@ h2 {
   font-weight: 600;
   z-index: +100;
 }
-.iitname {
-  background-color: #ce97f5;
-}
-.blue{
-  display: inline-block;
-  position: absolute;
-  height: 300px;
-  left: 35%;
-  top: 25%;
-  width: 400px;
-  border-radius: 50%;
-  background-image: linear-gradient(
-    80deg,
-    rgba(252, 233, 251, 0.5),
-    rgba(123, 98, 232, 0.696)
-  );
-  filter: blur(80px);
-}
-.purple{
-  display: inline-block;
-  position: absolute;
-  height: 400px;
-  left: 40%;
-  top: 35%;
-  width: 800px;
-  border-radius: 50%;
-  background-image: linear-gradient(
-    80deg,
-    rgba(252, 233, 251, 0.5),
-    rgba(221, 121, 240, 0.863)
-  );
-  filter: blur(80px);
-}
-.first {
-  height: 95vh; /* Set your desired height here */
-  padding: 10px 20px; /* Add padding for spacing */
-}
-.first-content a {
-  text-decoration: none;
-  color: black;
-}
-.first-content span:hover {
-  cursor: pointer;
-}
-.timer {
-  font-weight: 800;
-  font-size: 30px;
-  margin-top: 2%;
-}
-.time {
-  font-size: 20px;
-  padding: 5px 20px;
-}
-.heading2 {
-  text-align: center;
-  font-weight: 700;
-  width: 70%;
-  margin: auto;
-  margin-bottom: 12%;
-}
-.heading12 p {
-  font-size: 15px;
-  overflow-y: hidden;
-}
 
-.second-boxes {
-  margin-left: 5%;
-  margin-top: 3%;
-}
-.heading3 {
-  font-weight: 700;
-}
-.box {
-  width: 60%;
-  margin-top: 5%;
-  justify-content: left;
-}
-.box li {
-  font-size: 18px;
-  justify-content: left;
-}
-.box-2 {
-  margin-top: 4em;
-  text-decoration: none;
-  width: 96%;
-  justify-content: left;
-  justify-content: space-between;
-}
-.box-2-list {
-  display: flex;
-  justify-content: space-between;
-  
-}
-.box-2-list div {
-  margin-right: 2%;
-  margin-top: 2%;
-  padding: 4%;
-  background-color: #e8cdfa;
-  box-shadow: 100px black;
-}
-.box-2-list b {
-  background-color: #e8cdfa;
-}
- .first-content {
-  width: 48%;
-  margin-left: 5%;
-  margin-top: 6%;
-  text-align: left;
-  z-index: +100;
-}
-.first-content h4 {
-  margin-top: 1em;
-  z-index: +100;
-}
-.second {
-  height: 110vh; /* Set your desired height here */
-  padding: 20px; /* Add padding for spacing */
-  z-index: +100;
-}
-.third {
-  height: 50vh; /* Set your desired height here */
-  padding: 20px; /* Add padding for spacing */
-}
-.third-boxes {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-}
-.third-boxes div {
-  margin: 0px 5%;
-  width: 50%;
-}
-.course-content {
-  width: 88%;
-  margin-left: 5%;
-  margin-top: 4%;
-}
-.course-content a {
-  color: black;
-}
-.course-content a:hover {
-  background-color: #e8cdfa;
-}
-.course-content h2 {
-  margin: 1em 0;
-}
-/* Style the buttons that are used to open and close the accordion panel */
-.accordion {
-  background-color: #f7ecff;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  position: relative;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.accordion:hover {
-  background-color: #edd6fd;
-}
-
-/* Style the accordion panel. Note: hidden by default */
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-}
-.third-content {
-  margin-top: 40px;
-}
-
-/* For screens with a maximum width of 768px (mobile devices) */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-    overflow-y: hidden;
-  }
-  h2 {
-    font-size: 22px;
-    overflow-y: hidden;
-  }
-  .first {
-    height: auto;
-    overflow-y: hidden;
-
-  }
-  h3 {
-    font-size: 18px;
-    overflow-y: hidden;
-  }
-  h4 {
-    font-size: 14px;
-    overflow-y: hidden;
-  }
-  .second h4 {
-    font-size: 16px;
-    width: 88%;
-    overflow-y: hidden;
-  }
-  .box-2-list {
-    display: inline-block;
-    overflow-y: hidden;
-  }
-  .second-boxes li {
-    font-size: 10px;
-  }
-  .box {
-    margin: 10% 0;
-    padding: 10% 0;
-  }
-  .heading3 {
-    margin: 5% 0;
-    background-color: #ce97f5;
-    width: auto;
-    display: inline-block;
-  }
-  .second {
-    height: auto;
-  }
-  .box li {
-    font-size: 10px;
-    list-style-type: circle;
-  }
-  .box ul {
-    font-size: 10px;
-  }
-  .heading12 {
-    text-decoration: underline;
-  }
-  .third {
-    height: auto;
-  }
-  .box-2-list div {
-    margin-top: 10%;
-  }
-  .first-content {
-    width: 100%; /* Take full width on mobile */
-    margin-left: 0; /* No margin on the left */
-    margin-top: 20%; /* Adjust margin for spacing */
-    text-align: center; /* Center align text */
-    overflow-y: hidden;
-  }
-  .first {
-    height: 80vh;
-    z-index: +100;
-  }
-
-  .timer {
-    font-size: 16px; /* Reduce font size */
-    margin-top: 2%;
-    z-index: +100;
-  }
-  .time {
-    font-size: 20px;
-    display: inline-block;
-    z-index: +100;
-  }
-
-  .second-boxes {
-    margin-left: 0; /* No margin on the left */
-    margin-top: 4%; /* Adjust margin for spacing */
-  }
-
-  .heading2 {
-    font-size: 24px; /* Reduce font size */
-    margin-bottom: 8%; /* Adjust margin for spacing */
-  }
-
-  .box,
-  .box-2 {
-    width: 100%; /* Take full width on mobile */
-    margin-top: 3%; /* Adjust margin for spacing */
-  }
-
-  .box li {
-    font-size: 16px; /* Reduce font size */
-  }
-
-  .third-boxes {
-    width: 100%; /* Take full width on mobile */
-    flex-direction: column; /* Stack content vertically */
-  }
-
-  .third-boxes div {
-    margin: 2% 0; /* Adjust margin for spacing */
-    width: 100%; /* Take full width on mobile */
-  }
-
-  
-}

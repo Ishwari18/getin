@@ -1,6 +1,17 @@
+
+*{
+  background-color: #282c34;
+  color: white;
+}
+
 .App {
   text-align: center;
   overflow-x: hidden;
+  background-color: #282c34;
+  color: white;
+}
+.brandname {
+  color: white;
 }
 
 .App-logo {
@@ -15,7 +26,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -13,8 +13,8 @@ export const Navbar = () => {
           <Link className="brandname navbar-brand" to="/">
             GETIN
           </Link>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div>
+          <div className=" navbar-collapse" id="navbarSupportedContent">
+            <div className="btns">
               <Link className="btnn" to="/login" role="button">
                 Login
               </Link>
