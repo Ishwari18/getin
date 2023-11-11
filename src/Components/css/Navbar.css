@@ -2,7 +2,6 @@
 @font-face {
   font-family: val;
   src: url(f/Valorant\ Font.ttf);
-  
 }
 
 .navbar {
@@ -14,52 +13,26 @@
   padding: 0.8% 2%;
   text-align: center;
   box-shadow: black 100px;
-  color: white;
 }
-
 .nav-link:hover {
   text-decoration: underline;
-  color: white;
-}
-.navbar-brand {
-  color: white;
-}
-.brandname {
-  color: white;
-}
-.container-fluid{
-  display: flex;
-  color: white;
 }
 
 .btnn {
   text-decoration: none;
-  margin: 5%;
-  color: white;
+  background-color: #ce97f5;
+  padding: 6px 20px;
+  color: black;
+  margin: 4%;
   border: 1px black solid;
-  overflow-y: hidden;
-}
-
-.btns {
-  width: 300px;
-  color: white;
 }
 .btnn:hover {
   background-color: #e7cbfb;
-  color: white;
-}
-.collapse{
-  overflow-y: hidden;
-  color: white;
-}
-#navbarSupportedContent{
-  overflow-y: hidden;
 }
 .brandname {
   font-family: val;
   font-size: 1.8em;
   font-weight: 600;
-  color: white;
 }
 .menui {
   display: none;
