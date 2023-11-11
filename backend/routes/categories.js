@@ -87,7 +87,6 @@ router.get("/category/:categoryId", async (req, res) => {
   }
 });
 
-
 // Route to fetch information about a user selling services in a specific category
 router.get("/category/:categoryId/user/:userId", async (req, res) => {
   try {
@@ -111,9 +110,5 @@ router.get("/category/:categoryId/user/:userId", async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
-
-
-
 
 module.exports = router;

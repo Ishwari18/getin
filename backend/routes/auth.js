@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// ROUTE 1: Create a User using: POST "/api/auth". No login required
+// ROUTE 1 POST "/api/auth". No login required
 router.post('/', [
   body('name', 'Enter a valid name').isLength({ min: 3 }),
   body('email', 'Enter a valid email').isEmail(),
@@ -74,7 +74,7 @@ router.post('/', [
   }
 });
 
-// ROUTE 2: Authenticate a User using: POST "/api/auth/login". No login required
+// ROUTE 2: Authenticate a User using: POST "/api/auth/login". 
 router.post('/login', [
   body('email', 'Enter a valid email').isEmail(),
   body('password', 'Password cannot be blank').exists(),
@@ -148,26 +148,6 @@ router.post("/upload-profile-picture", fetchuser, upload.single("profilePicture"
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
-// router.get("/profile-picture", fetchuser, (req, res) => {
-//   const userId = req.user.id; // Get the user's ID from authentication (you may need to implement this)
-  
-//   // Retrieve the user's profile picture path or URL from the database
-//   User.findById(userId, (err, user) => {
-//     if (err) {
-//       return res.status(500).json({ error: "Internal Server Error" });
-//     }
-    
-//     if (!user) {
-//       return res.status(404).json({ error: "User not found" });
-//     }
-
-//     const profilePicturePath = user.profilePicture;
-
-//     // Serve the user's profile picture as a response
-//     res.status(200).sendFile(profilePicturePath);
-//   });
-// });
 
 
 module.exports = router;

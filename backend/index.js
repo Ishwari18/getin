@@ -24,11 +24,9 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/categories", require("./routes/categories"));
 app.use(express.static("public"));
-
 app.get("/", (req, res) => {
   res.send("hello ish");
 });
-
 app.listen(port, () => {
   console.log(`iNotebook backend listening at http://localhost:${port}`);
 });
@@ -53,42 +51,6 @@ function notifyMatch(user1, user2) {
   io.to(user1.socketId).emit("matchFound", { user: user2 }); // Send user2 details to user1
   io.to(user2.socketId).emit("matchFound", { user: user1 }); // Send user1 details to user2
 }
-
-// Implement the onMatch function
-// function onMatch(socket, user) {
-//   if (onlineUsers.has(user)) {
-//     // The user is already in the onlineUsers set, so notify them to wait
-//     console.log(`User ${user._id} is already waiting for a match.`);
-//     return;
-//   }
-
-//   onlineUsers.add(user);
-//   console.log(onlineUsers);
-
-//   if (onlineUsers.size >= 2) {
-//     // Attempt to find a match
-//     const matchedUser = findMatchingUser(user);
-
-//     if (matchedUser && matchedUser !== user) {
-//       // Notify both users about the match
-//       notifyMatch(user, matchedUser);
-
-//       // Remove the matched users from the set of online users
-//       onlineUsers.delete(user);
-//       onlineUsers.delete(matchedUser);
-
-//       // Log the match
-//       console.log(
-//         `Match found! User ${user._id} is matched with User ${matchedUser._id}`
-//       );
-//     } else {
-//       // No match found for the user
-//       console.log(`User ${user._id} is waiting for a match.`);
-//     }
-//   } else {
-//     console.log(`User ${user._id} is waiting for a match.`);
-//   }
-// }
 
 function onMatch(socket, user) {
   if (onlineUsers.has(user)) {
